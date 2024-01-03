@@ -17,6 +17,14 @@ cd spring-petclinic
 java -jar target/*.jar
 ```
 
+Alternatively, you can run the application in gradle with the following steps:
+```bash
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./gradlew build
+java -jar build/libs/spring-petclinic-3.2.0.jar
+```
+
 You can then access the Petclinic at <http://localhost:8080/>.
 
 <img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
@@ -25,9 +33,11 @@ Or you can run it from Maven directly using the Spring Boot Maven plugin. If you
 
 ```bash
 ./mvnw spring-boot:run
+
+# gradle is ...
+./gradlew bootRun
 ```
 
-> NOTE: If you prefer to use Gradle, you can build the app using `./gradlew build` and look for the jar file in `build/libs`.
 
 ## Building a Container
 
@@ -36,6 +46,20 @@ There is no `Dockerfile` in this project. You can build a container image (if yo
 ```bash
 ./mvnw spring-boot:build-image
 ```
+
+## Fun topics encountered
+
+Certs:
+https://medium.com/@codebyamir/the-java-developers-guide-to-ssl-certificates-b78142b3a0fc#:~:text=connection%20over%20SSL.-,Keystore,and%20one%20for%20the%20certificate.
+
+Externalized Configuration:
+https://docs.spring.io/spring-boot/docs/1.0.1.RELEASE/reference/html/boot-features-external-config.html
+
+Memory Profiling:
+https://www.linkedin.com/pulse/live-memory-view-now-available-vs-code-java-rory-preddy-/
+https://www.jetbrains.com/help/idea/tutorial-find-a-memory-leak.html#allocation-profiling
+
+
 
 ## In case you find a bug/suggested improvement for Spring Petclinic
 
